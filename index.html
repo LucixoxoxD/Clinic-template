@@ -1,9 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Saanvi Multispeciality Clinic",
+  "image": "images\\hero-main.png",
+  "url": "https://yourwebsite.com",
+  "telephone": "+911204567890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "B-42, Sector 18 Main Market",
+    "addressLocality": "Noida",
+    "addressRegion": "UP",
+    "postalCode": "201301",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Sa 09:00-21:00",
+  "priceRange": "₹300",
+  "areaServed": "Noida",
+  "sameAs": [
+    "https://share.google/n9Hm6xQu3cgwglOv2"
+  ]
+}
+</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Saanvi Multispeciality Clinic — Noida</title>
+<title>Saanvi Multispeciality Clinic in Sector 18, Noida | Same-Day Doctor Consultation</title>
+<meta name="description" content="Trusted multispeciality clinic in Sector 18, Noida. Book same-day consultation for general medicine, dental care, paediatrics, dermatology, physiotherapy, ophthalmology and diagnostics. Call or WhatsApp now.">
+<h1>Trusted multispeciality clinic in Sector 18, Noida</h1>
+<p class="lede">
+  Book same-day consultation with experienced doctors for general medicine, dental care, paediatrics, dermatology, physiotherapy, ophthalmology and diagnostics. Conveniently located in Sector 18, Noida.
+</p>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -40,7 +69,7 @@
     border: 1px solid transparent; transition: transform .1s ease, background .15s ease;
   }
   .btn:active { transform: translateY(1px); }
-  .btn.primary { background: var(--accent); color: white; position: relative; overflow: hidden; }
+  .btn.primary { background: var(--accent); color: white; position: relative; overflow: hidden; box-shadow: 0 10px 25px -10px rgba(37, 211, 102, 0.4);}
   .btn.primary::after {
     content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
     background: linear-gradient(100deg, transparent, rgba(255,255,255,0.25), transparent);
@@ -146,14 +175,13 @@
   .trust-strip span { font-size: 11px; color: var(--ink-3); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; }
 
   /* Hero visual */
-  .hero-visual { position: relative; aspect-ratio: 4/5; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1.3fr 1fr; gap: 14px; min-width: 0; }
+  .hero-visual { position: relative; grid-template-columns: 1fr 1fr; grid-template-rows: 1.3fr 1fr; gap: 14px; min-width: 0; }
   .tile { position: relative; border-radius: 10px; overflow: hidden; background: var(--soft); border: 1px solid var(--line); will-change: opacity, transform; }
-  .tile.main { grid-row: 1 / span 2; background: linear-gradient(150deg, oklch(0.92 0.02 var(--hue)), oklch(0.88 0.04 var(--hue))); }
+  .tile.main { background: linear-gradient(150deg, oklch(0.92 0.02 var(--hue)), oklch(0.88 0.04 var(--hue))); }
   .tile.main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 30%;
 }
   /* .tile.main::after { content: ""; position: absolute; inset: 20% 10% 10% 20%; background: radial-gradient(circle at 60% 40%, oklch(0.85 0.04 var(--hue)) 0 30%, transparent 31%), radial-gradient(circle at 40% 70%, oklch(0.80 0.05 var(--hue)) 0 22%, transparent 23%); opacity: .85; } */
   .tile-label { position: absolute; top: 10px; left: 10px; padding: 3px 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); letter-spacing: 0.05em; z-index: 2; }
@@ -459,8 +487,12 @@
     }
     .hero, .book-layout, .seo-card, .section-head { grid-template-columns: 1fr; }
     .hero { gap: 40px; padding: 56px 32px 68px; }
-    .hero-visual { max-width: 640px; width: 100%; margin: 0 auto; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual {
+      width: 100%;
+      height: 100%;
+      display: block;
+}   
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
     .doctors-grid { grid-template-columns: repeat(2, 1fr); }
     .section { padding: 64px 32px; }
     .book-side { position: static; }
@@ -623,6 +655,41 @@
   height: 100%;
 }
 
+.reviews-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.reviews-slider .service-card {
+  min-width: 260px;
+  max-width: 300px;
+}
+
+.reviews-slider {
+  padding-bottom: 14px;
+  scroll-padding-left: 10px;
+}
+
+.reviews-slider {
+  scroll-behavior: smooth;
+}
+
+/* .reviews-slider {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+} */
+
 </style>
 </head>
 <body>
@@ -692,7 +759,14 @@
     <div class="cta-row">
       <a class="btn primary lg" href="#booking">Book on WhatsApp →</a>
       <a class="btn dark lg" href="tel:+911204567890">Call Now</a>
+
+    <div style="font-size:12px; color:#666; margin-top:19px;">
+      No waiting • Instant confirmation
     </div>
+    </div>
+
+    
+    
     <!-- Conversion optimization: trust signals pulled closer to the primary booking action -->
     <div class="proof-pills">
       <span class="proof-pill"><strong>4.8 rating</strong> Google rated</span>
@@ -739,52 +813,92 @@
       <span class="eyebrow">Patient reviews</span>
       <h2 class="section-title">What patients actually say.</h2>
     </div>
-    <!-- <p class="kicker">Real experiences from Google reviews. This is what builds trust.</p> -->
+    <p class="kicker">
+  Your local clinic for general physician visits, dental care, child care, skin problems, body pain, eye check-ups and basic diagnostics in Sector 18, Noida.
+</p>
   </div>
 
-  <div class="services-grid">
-    <article class="service-card">
-      <div style="color: var(--warn); letter-spacing: 2px; font-size: 12px;">★★★★★</div>
-      <p>"Doctor explained everything clearly. No unnecessary tests. Very honest treatment."</p>
-      <div class="meta-row">
-        <span>— Rahul S.</span>
-        <span class="price" style="font-size:12px; color:#888; font-weight:400;">Google Review</span>
-      </div>
-    </article>
+  <div class="reviews-slider">
 
-    <article class="service-card">
-      <div style="color: var(--warn); letter-spacing: 2px; font-size: 12px;">★★★★★</div>
-      <p>"Clinic is clean and staff is polite. Got same-day appointment easily."</p>
-      <div class="meta-row">
-        <span>— Anjali K.</span>
-        <span class="price" style="font-size:12px; color:#888; font-weight:400;">Google Review</span>
-      </div>
-    </article>
+  <article class="service-card">
+    <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+    <p>"Doctor explained everything clearly. No unnecessary tests. Very honest treatment."</p>
+    <div class="meta-row">
+      <span>— Verified Patient · Noida</span>
+      <span style="font-size:12px; color:#888;">Google Review</span>
+    </div>
+  </article>
 
-    <article class="service-card">
-      <div style="color: var(--warn); letter-spacing: 2px; font-size: 12px;">★★★★★</div>
+  <article class="service-card">
+    <span style="color:#f4b400; font-size:14px;">★★★★★</span>   
+    <p>"Clinic is clean and staff is polite. Got same-day appointment easily."</p>
+    <div class="meta-row">
+      <span>— Verified Patient · Noida</span>
+      <span style="font-size:12px; color:#888;">Google Review</span>
+    </div>
+  </article>
+
+  <article class="service-card">
+      <span style="color:#f4b400; font-size:14px;">★★★★★</span>    
       <p>"Treatment worked well. Doctor actually listens which is rare."</p>
-      <div class="meta-row">
-        <span>— Vikram P.</span>
-        <span class="price" style="font-size:12px; color:#888; font-weight:400;">Google Review</span>
-      </div>
-    </article>
+    <div class="meta-row">
+      <span>— Verified Patient · Noida</span>
+      <span style="font-size:12px; color:#888;">Google Review</span>
+    </div>
+  </article>
 
-    <article class="service-card">
-      <div style="color: var(--warn); letter-spacing: 2px; font-size: 12px;">★★★★★</div>
-      <p>"Transparent pricing and quick consultation. Highly recommend."</p>
-      <div class="meta-row">
-        <span>— Neha M.</span>
-        <span class="price" style="font-size:12px; color:#888; font-weight:400;">Google Review</span>
-      </div>
-    </article>
+  <article class="service-card">
+  <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+  <p>"Doctor was patient and explained everything in simple terms. Didn’t feel rushed at all."</p>
+  <div class="meta-row">
+    <span>— Verified Patient · Noida</span>
+    <span style="font-size:12px; color:#888;">Google Review</span>
   </div>
+</article>
+
+<article class="service-card">
+  <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+  <p>"Appointment was on time and the process was smooth. Staff is helpful and polite."</p>
+  <div class="meta-row">
+    <span>— Verified Patient · Sector 18</span>
+    <span style="font-size:12px; color:#888;">Google Review</span>
+  </div>
+</article>
+
+<article class="service-card">
+  <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+  <p>"Good experience overall. Clean clinic and proper guidance for treatment."</p>
+  <div class="meta-row">
+    <span>— Verified Patient · Noida</span>
+    <span style="font-size:12px; color:#888;">Google Review</span>
+  </div>
+</article>
+
+<article class="service-card">
+  <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+  <p>"Visited for consultation, everything was handled professionally. No unnecessary charges."</p>
+  <div class="meta-row">
+    <span>— Verified Patient · Atta Market</span>
+    <span style="font-size:12px; color:#888;">Google Review</span>
+  </div>
+</article>
+
+<article class="service-card">
+  <span style="color:#f4b400; font-size:14px;">★★★★★</span>
+  <p>"Doctor actually listens and gives practical advice. Felt comfortable discussing issues."</p>
+  <div class="meta-row">
+    <span>— Verified Patient · Sector 27</span>
+    <span style="font-size:12px; color:#888;">Google Review</span>
+  </div>
+</article>
+
+</div>
 
   <div style="margin-top: 30px; text-align: center;">
-    <a href="https://share.google/n9Hm6xQu3cgwglOv2" target="_blank" class="btn ghost">
-      View all reviews on Google →
-    </a>
-  </div>
+  <a href="https://share.google/n9Hm6xQu3cgwglOv2" target="_blank" class="btn ghost">
+    View all reviews on Google →
+  </a>
+</div>
 </section>
 
 <!-- LOCAL SEO -->
@@ -793,9 +907,9 @@
   <div class="section-head" data-reveal>
     <div>
       <span class="eyebrow">Find us · Local SEO</span>
-      <h2 class="section-title">Built for local discovery in Sector 18, Noida.</h2>
+      <h2 class="section-title">Doctor consultation and clinic services in Noida</h2>
     </div>
-    <!-- <p class="kicker">Uses schema.org <code class="mono">LocalBusiness</code> + <code class="mono">MedicalClinic</code> markup, consistent NAP details, and a real Google Maps embed to help patients find and contact the clinic faster.</p> -->
+    <p class="kicker">Get expert care for common health concerns at our Sector 18 clinic. Most visits are quick, clear and easy to book by phone or WhatsApp.</p>
   </div>
   <div class="seo-card" data-reveal>
     <div class="map">
@@ -1021,14 +1135,60 @@
 
 <!-- FOOTER -->
 <footer class="site-foot" id="contact">
+
   <div class="brand">
     <div class="name">Saanvi Multispeciality Clinic</div>
-    <p>A family multispeciality practice in Sector 18, Noida. Serving over 12,000 patients since 2011.</p>
+    <p>
+      Trusted multispeciality clinic in Sector 18, Noida providing same-day doctor consultation for general medicine, dental care, paediatrics, dermatology, physiotherapy and diagnostics.
+    </p>
   </div>
-  <div><h6>Services</h6><ul><li>General Medicine</li><li>Dental Care</li><li>Paediatrics</li><li>Dermatology</li><li>Physiotherapy</li></ul></div>
-  <div><h6>Clinic</h6><ul><li>Our doctors</li><li>Reviews</li><li>Insurance</li><li>Careers</li><li>Blog</li></ul></div>
-  <div><h6>Reach us</h6><ul><li>+91 120 456 7890</li><li>hello@saanviclinic.in</li><li>WhatsApp</li><li>Directions</li></ul></div>
-  <div class="fine"><span>© 2026 Saanvi Multispeciality Clinic</span><span>DMC Reg · 042189 · NABH Accredited</span></div>
+
+  <div>
+    <h6>Services</h6>
+    <ul>
+      <li>General Medicine</li>
+      <li>Dental Care</li>
+      <li>Paediatrics</li>
+      <li>Dermatology</li>
+      <li>Physiotherapy</li>
+    </ul>
+  </div>
+
+  <div>
+    <h6>Clinic</h6>
+    <ul>
+      <li>Our Doctors</li>
+      <li>Patient Reviews</li>
+      <li>Insurance</li>
+      <li>Careers</li>
+      <li>Blog</li>
+    </ul>
+  </div>
+
+  <!-- 🔥 THIS IS THE IMPORTANT PART -->
+  <div>
+    <h6>Contact & Location</h6>
+    <ul>
+      <li>Saanvi Multispeciality Clinic</li>
+      <li>B-42, Sector 18 Main Market, Noida, UP 201301</li>
+      <li>
+        Phone: <a href="tel:+911204567890">+91 120 456 7890</a>
+      </li>
+      <li>
+        WhatsApp: <a href="https://wa.me/919876543210" target="_blank">Chat on WhatsApp</a>
+      </li>
+      <li>
+        <a href="https://share.google/n9Hm6xQu3cgwglOv2" target="_blank">View on Google Maps</a>
+      </li>
+      <li>Mon–Sat: 9:00 AM – 9:00 PM</li>
+    </ul>
+  </div>
+
+  <div class="fine">
+    <span>© 2026 Saanvi Multispeciality Clinic</span>
+    <span>DMC Reg · 042189 · NABH Accredited</span>
+  </div>
+
 </footer>
 
 <!-- WhatsApp FAB -->
